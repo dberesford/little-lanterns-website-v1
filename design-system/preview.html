@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Little Lanterns — Design System Preview</title>
+    <link rel="stylesheet" href="./tokens.css" />
+    <link rel="stylesheet" href="./components.css" />
+    <link rel="stylesheet" href="./a11y.css" />
+    <style>
+      .preview-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+        gap: var(--ll-space-4);
+      }
+      .swatch {
+        display: grid;
+        gap: var(--ll-space-2);
+      }
+      .swatch__chip {
+        aspect-ratio: 1.4 / 1;
+        border-radius: var(--ll-radius-md);
+        border: 1px solid var(--ll-color-border);
+        box-shadow: inset 0 0 0 1px color-mix(in srgb, #fff 20%, transparent);
+      }
+      .type-row {
+        display: grid;
+        gap: var(--ll-space-2);
+        padding-block: var(--ll-space-4);
+        border-bottom: 1px solid var(--ll-color-border);
+      }
+      .space-bar {
+        height: 1rem;
+        border-radius: var(--ll-radius-sm);
+        background: color-mix(in srgb, var(--ll-soft-sage) 55%, var(--ll-mist-paper));
+      }
+      .demo-cover {
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(circle at 68% 62%, rgba(228, 160, 26, 0.55), transparent 28%),
+          linear-gradient(165deg, #2c4a62 0%, #163a3f 55%, #102a2e 100%);
+        display: grid;
+        place-items: end center;
+        padding-bottom: 18%;
+      }
+      .demo-lantern {
+        width: 3.5rem;
+        height: 5rem;
+        border-radius: 0.4rem 0.4rem 0.7rem 0.7rem;
+        background: linear-gradient(180deg, #f6e2a8, #e4a01a 70%);
+        box-shadow: 0 0 28px rgba(228, 160, 26, 0.55);
+        position: relative;
+      }
+      .demo-lantern::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -0.55rem;
+        width: 1.6rem;
+        height: 0.7rem;
+        transform: translateX(-50%);
+        border: 3px solid #8b6914;
+        border-bottom: 0;
+        border-radius: 1rem 1rem 0 0;
+      }
+      .hero-demo {
+        display: grid;
+        gap: var(--ll-space-5);
+        padding-block: var(--ll-space-7) var(--ll-space-8);
+      }
+      @media (min-width: 860px) {
+        .hero-demo {
+          grid-template-columns: 1.05fr 0.95fr;
+          align-items: end;
+        }
+      }
+      .divider {
+        height: 1px;
+        background: var(--ll-color-border);
+        margin-block: var(--ll-space-7);
+      }
+      h2.ll-title { margin: 0 0 var(--ll-space-5); }
+      .site-header-wrap { position: relative; }
+    </style>
+  </head>
+  <body>
+    <a class="ll-skip" href="#main-content">Skip to main content</a>
+
+    <header class="ll-site-header site-header-wrap">
+      <div class="ll-shell ll-site-header__inner">
+        <a class="ll-brand-link" href="#main-content">Little Lanterns</a>
+        <button
+          class="ll-nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="preview-nav"
+          data-nav-toggle
+        >
+          <span class="ll-sr-only">Menu</span>
+          <span class="ll-nav-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <nav class="ll-nav" id="preview-nav" aria-label="Preview sections" data-nav>
+          <ul class="ll-nav__list">
+            <li><a class="ll-nav__link" href="#tokens" aria-current="page">Tokens</a></li>
+            <li><a class="ll-nav__link" href="#components">Components</a></li>
+            <li><a class="ll-nav__link" href="#a11y">Accessibility</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="ll-band-inverse" aria-label="Brand preview">
+      <div class="ll-shell hero-demo">
+        <div class="ll-stack-5">
+          <p class="ll-label" style="margin: 0">Website brand kit</p>
+          <p class="ll-display ll-display-xl" style="margin: 0">
+            Soft light,<br />calm edges.
+          </p>
+          <p class="ll-lede" style="margin: 0">
+            Warm, cozy, storybook tokens for Home, Books, About, and For Caregivers —
+            locked to the Art Director palette. WCAG AA focus and contrast hardened in LIT-74.
+          </p>
+          <div class="ll-btn-row">
+            <a class="ll-btn ll-btn--glow ll-btn--lg" href="#tokens">View tokens</a>
+            <a class="ll-btn ll-btn--on-dark ll-btn--quiet ll-btn--lg" href="#components">Components</a>
+          </div>
+        </div>
+        <div class="ll-media-frame ll-media-frame--lantern-glow" style="min-height: 18rem">
+          <div class="demo-cover" aria-hidden="true">
+            <div class="demo-lantern"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="ll-shell ll-section" id="main-content" tabindex="-1">
+      <h1 class="ll-display ll-display-md" style="margin: 0 0 var(--ll-space-6)">
+        Design system preview
+      </h1>
+
+      <h2 class="ll-title" id="tokens">Color — locked palette</h2>
+      <div class="preview-grid">
+        <div class="swatch"><div class="swatch__chip" style="background:#E4A01A" aria-hidden="true"></div><strong>Lantern Amber</strong><span class="ll-caption">#E4A01A · accent / glow · not small text</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#163A3F" aria-hidden="true"></div><strong>Night Teal</strong><span class="ll-caption">#163A3F · brand / text · 10.9:1 on Mist</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#EEF2EF" aria-hidden="true"></div><strong>Mist Paper</strong><span class="ll-caption">#EEF2EF · page ground</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#D45A3A" aria-hidden="true"></div><strong>Ember Coral</strong><span class="ll-caption">#D45A3A · stakes (large only)</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#8FA88A" aria-hidden="true"></div><strong>Soft Sage</strong><span class="ll-caption">#8FA88A · calm · decorative</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#2C4A62" aria-hidden="true"></div><strong>Porch Blue</strong><span class="ll-caption">#2C4A62 · dusk / links · 8.2:1</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#C6D96A" aria-hidden="true"></div><strong>Firefly Lime</strong><span class="ll-caption">#C6D96A · neighbor · decorative</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#F3D9A0" aria-hidden="true"></div><strong>Window Warm</strong><span class="ll-caption">#F3D9A0 · settle · 8.9:1 with teal</span></div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 class="ll-title">Typography</h2>
+      <div class="type-row">
+        <span class="ll-label">Display · Fraunces</span>
+        <p class="ll-display ll-display-lg" style="margin:0">The Softest Glow</p>
+      </div>
+      <div class="type-row">
+        <span class="ll-label">Brand · Fraunces</span>
+        <p class="ll-brand" style="margin:0; font-size:2rem">Little Lanterns</p>
+      </div>
+      <div class="type-row">
+        <span class="ll-label">Body · Source Sans 3</span>
+        <p class="ll-prose" style="margin:0">
+          Soft is still light. Mira’s shy night-lantern won’t blaze like the others —
+          only a quiet circle of glow. Caregivers get calm, readable support for read-aloud time.
+          Inline <a href="#a11y">links stay underlined</a> so meaning is not color-only.
+        </p>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2 class="ll-title">Spacing scale</h2>
+      <div class="ll-stack-3">
+        <div class="ll-cluster"><div class="space-bar" style="width:0.25rem" aria-hidden="true"></div><span class="ll-caption">1 · 4px</span></div>
+        <div class="ll-cluster"><div class="space-bar" style="width:0.5rem" aria-hidden="true"></div><span class="ll-caption">2 · 8px</span></div>
+        <div class="ll-cluster"><div class="space-bar" style="width:1rem" aria-hidden="true"></div><span class="ll-caption">4 · 16px</span></div>
+        <div class="ll-cluster"><div class="space-bar" style="width:1.5rem" aria-hidden="true"></div><span class="ll-caption">5 · 24px</span></div>
+        <div class="ll-cluster"><div class="space-bar" style="width:2rem" aria-hidden="true"></div><span class="ll-caption">6 · 32px</span></div>
+        <div class="ll-cluster"><div class="space-bar" style="width:3rem" aria-hidden="true"></div><span class="ll-caption">7 · 48px</span></div>
+        <div class="ll-cluster"><div class="space-bar" style="width:4rem" aria-hidden="true"></div><span class="ll-caption">8 · 64px</span></div>
+      </div>
+    </main>
+
+    <section class="ll-band-settle" id="components" aria-labelledby="components-heading">
+      <div class="ll-shell ll-section ll-stack-6">
+        <h2 class="ll-title" id="components-heading">Buttons</h2>
+        <div class="ll-btn-row">
+          <button class="ll-btn ll-btn--primary" type="button">Primary</button>
+          <button class="ll-btn ll-btn--glow" type="button">Glow CTA</button>
+          <button class="ll-btn ll-btn--quiet" type="button">Quiet</button>
+          <button class="ll-btn ll-btn--primary ll-btn--sm" type="button">Small</button>
+          <button class="ll-btn ll-btn--primary ll-btn--lg" type="button">Large</button>
+        </div>
+
+        <div class="ll-band-inverse" style="border-radius: var(--ll-radius-lg); padding: var(--ll-space-5)">
+          <div class="ll-btn-row">
+            <button class="ll-btn ll-btn--on-dark" type="button">On dark</button>
+            <button class="ll-btn ll-btn--on-dark ll-btn--quiet" type="button">Quiet on dark</button>
+            <button class="ll-btn ll-btn--glow" type="button">Glow CTA</button>
+          </div>
+        </div>
+
+        <h2 class="ll-title">Book tile + care panel</h2>
+        <div style="display:grid; gap: var(--ll-space-5); grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); align-items:start">
+          <a class="ll-book-tile" href="#components">
+            <div class="ll-book-tile__cover">
+              <div class="demo-cover" aria-hidden="true"><div class="demo-lantern"></div></div>
+            </div>
+            <div class="ll-book-tile__meta">
+              <span class="ll-label">Book 1</span>
+              <strong class="ll-title" style="margin:0">The Softest Glow</strong>
+              <span class="ll-caption">Ages 6–8 · Little Lanterns Lane</span>
+            </div>
+          </a>
+          <aside class="ll-care-panel" aria-labelledby="care-tip-title">
+            <p class="ll-label" style="margin:0">For caregivers</p>
+            <h3 class="ll-care-panel__title" id="care-tip-title">Read-aloud tip</h3>
+            <p style="margin:0">
+              Pause on the naming pages. Let kids point to the glow — shy, forced, then soft-true —
+              before reading the refrain: <em>Soft is still light.</em>
+            </p>
+            <button class="ll-btn ll-btn--primary ll-btn--sm" type="button">More tips</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="ll-shell ll-section" id="a11y" aria-labelledby="a11y-heading">
+      <h2 class="ll-title" id="a11y-heading">Accessibility notes (LIT-74)</h2>
+      <div class="ll-prose ll-stack-4">
+        <p style="margin:0">
+          Import order: <code>tokens.css</code> → <code>components.css</code> → <code>a11y.css</code>.
+          Every page needs a skip link, one <code>h1</code>, landmark regions, and
+          <code>aria-current="page"</code> on the active nav item (underline + weight, not color alone).
+        </p>
+        <p class="ll-text-stakes" style="margin:0">
+          Stakes / alert copy uses darkened coral (<code>--ll-color-stakes-text</code>) for AA on Mist Paper.
+          Raw Ember Coral is large text or decorative only.
+        </p>
+        <p class="ll-caption" style="margin:0">
+          Tab through buttons and nav to verify dual-tone focus rings. Toggle OS “Reduce motion” to confirm hover lifts stop.
+        </p>
+      </div>
+    </section>
+
+    <footer class="ll-shell" style="padding-block: var(--ll-space-7);">
+      <p class="ll-caption" style="margin:0">
+        Little Lanterns design system v1.1 · a11y pass LIT-74 · aligned to Art Director locks LIT-15 / LIT-59 / LIT-65
+      </p>
+    </footer>
+
+    <script>
+      (function () {
+        var toggle = document.querySelector("[data-nav-toggle]");
+        var nav = document.querySelector("[data-nav]");
+        if (!toggle || !nav) return;
+
+        function setOpen(open) {
+          nav.setAttribute("data-open", open ? "true" : "false");
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        }
+
+        setOpen(false);
+
+        toggle.addEventListener("click", function () {
+          setOpen(nav.getAttribute("data-open") !== "true");
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") setOpen(false);
+        });
+
+        nav.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            if (window.matchMedia("(max-width: 719px)").matches) setOpen(false);
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

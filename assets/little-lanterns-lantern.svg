@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" role="img" aria-hidden="true">
+  <defs>
+    <radialGradient id="ll-glow" cx="50%" cy="52%" r="48%">
+      <stop offset="0%" stop-color="#F3D9A0" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#E4A01A" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#E4A01A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="80" cy="88" r="62" fill="url(#ll-glow)"/>
+  <g stroke="#163A3F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M62 40 Q80 20 98 40" fill="none"/>
+    <path d="M64 50 L96 50 L90 40 L70 40 Z" fill="#163A3F"/>
+    <rect x="58" y="54" width="44" height="68" rx="8" fill="#EEF2EF"/>
+    <path d="M64 122 L96 122 L102 134 L58 134 Z" fill="#163A3F"/>
+  </g>
+  <path d="M80 72 C88 82 88 94 80 104 C72 94 72 82 80 72 Z" fill="#E4A01A"/>
+  <circle cx="80" cy="96" r="5" fill="#F3D9A0"/>
+</svg>

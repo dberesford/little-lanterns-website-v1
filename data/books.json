@@ -1,0 +1,54 @@
+{
+  "series": {
+    "name": "Little Lanterns Lane",
+    "description": "A gentle picture-book series for ages 6–8. Each story follows a child and a special night-lantern as they practice a small feeling-skill—with warmth, wonder, and caregiver-friendly read-aloud pacing."
+  },
+  "titles": [
+    {
+      "slug": "the-softest-glow",
+      "title": "The Softest Glow",
+      "subtitle": "A Little Lanterns Lane Story of Quiet Courage",
+      "seriesNumber": 1,
+      "status": "available",
+      "ageRange": "6–8",
+      "format": "32-page 8.5×8.5″ square paperback",
+      "cover": "/assets/the-softest-glow-cover.png",
+      "refrain": "Soft is still light.",
+      "blurb": "Mira’s new night-lantern won’t blaze like the others—only a shy circle of light. She tries to force it brighter until the glow goes out. With Grandma’s help, she names what is true: homesick, mad, curious, brave-enough. The soft glow returns, and when neighbors visit, quiet light helps everyone settle.",
+      "positioning": "A warm bedtime picture book about quiet belonging—where a shy night-lantern teaches that soft light is still brave light.",
+      "insideBeats": [
+        "A new room, a tea-colored lantern, and a glow that feels too shy.",
+        "Trying to force the light brighter—until it flickers out.",
+        "Naming what’s true: homesick, mad, curious, brave-enough.",
+        "Soft light returns, and helps the whole street settle for sleep."
+      ],
+      "caregiverNote": {
+        "prompt": "Tonight we can… Name one soft feeling before lights out.",
+        "tipsHref": "/caregivers"
+      },
+      "retailerUrl": null,
+      "lookInside": [
+        {
+          "src": "/assets/LIT-66-softproof-pp07-08-compare.png",
+          "alt": "Interior spread: neighboring lanterns blaze while Mira’s stays soft"
+        },
+        {
+          "src": "/assets/LIT-66-softproof-pp15-16-glow-out.png",
+          "alt": "Interior spread: the shy glow flickers out"
+        },
+        {
+          "src": "/assets/LIT-66-softproof-pp27-28-shared-settle.png",
+          "alt": "Interior spread: quiet light helps everyone settle"
+        },
+        {
+          "src": "/assets/LIT-66-softproof-pp31-32-coda.png",
+          "alt": "Interior coda: Soft is still light—and it stayed"
+        }
+      ]
+    }
+  ],
+  "comingNext": {
+    "label": "Coming next",
+    "note": "More Little Lanterns Lane stories are on the way. No fake titles or ISBNs here—just a quiet placeholder for Book 2."
+  }
+}

@@ -1,0 +1,8 @@
+# Cloudflare Pages — Little Lanterns website v1 (LIT-75)
+# Deploy: wrangler pages deploy . --project-name=little-lanterns
+# Or: drag-drop this folder in Cloudflare Pages dashboard (no build command).
+
+name = "little-lanterns"
+compatibility_date = "2026-07-22"
+
+pages_build_output_dir = "."

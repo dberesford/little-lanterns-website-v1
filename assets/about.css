@@ -1,0 +1,176 @@
+/**
+ * About / Our Story — page-specific layout (LIT-72)
+ * Depends on design-system + assets/site.css
+ */
+
+.ll-about-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(3rem, 7vh, 5rem) clamp(2.5rem, 6vh, 4rem);
+  animation: ll-rise var(--ll-duration-slow) var(--ll-ease-out) both;
+}
+
+.ll-about-hero__brand {
+  display: block;
+  font-size: clamp(2.5rem, 1.9rem + 2.4vw, 3.75rem);
+  margin: 0 0 var(--ll-space-4);
+}
+
+.ll-about-hero__headline {
+  max-width: 16ch;
+  margin: 0 0 var(--ll-space-4);
+}
+
+.ll-about-hero .ll-lede {
+  margin: 0;
+  max-width: 36rem;
+}
+
+.ll-about-visual {
+  margin: 0;
+  padding: 0;
+}
+
+.ll-about-visual__frame {
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  background: var(--ll-night-teal);
+  min-height: min(48vh, 28rem);
+}
+
+.ll-about-visual__frame img {
+  width: 100%;
+  height: min(52vh, 30rem);
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+.ll-about-visual__frame::after {
+  content: "";
+  position: absolute;
+  inset: auto 28% 10% 28%;
+  height: 34%;
+  border-radius: 50%;
+  background: var(--ll-glow-soft-true);
+  filter: blur(28px);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.ll-about-visual figcaption {
+  margin: 0;
+  padding: var(--ll-space-3) var(--ll-gutter);
+  max-width: var(--ll-content-max);
+  margin-inline: auto;
+}
+
+.ll-about-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.ll-about-split--flip {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.ll-about-split__copy h2 {
+  margin: 0 0 var(--ll-space-4);
+}
+
+.ll-about-split__copy p {
+  margin: 0;
+  font-size: var(--ll-fs-body-lg);
+  color: var(--ll-color-text-muted);
+  max-width: var(--ll-prose-max);
+}
+
+.ll-about-split__copy p + p {
+  margin-top: var(--ll-space-4);
+}
+
+.ll-about-mat img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: calc(var(--ll-radius-lg) - 4px);
+}
+
+.ll-about-ethos {
+  display: grid;
+  gap: var(--ll-space-5);
+  max-width: 42rem;
+}
+
+.ll-about-ethos h2 {
+  margin: 0;
+}
+
+.ll-about-ethos p {
+  margin: 0;
+  font-size: var(--ll-fs-body-lg);
+  color: var(--ll-color-text-muted);
+}
+
+.ll-about-note {
+  margin: 0;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: var(--ll-radius-lg);
+  background: color-mix(in srgb, var(--ll-window-warm) 38%, var(--ll-mist-paper));
+  border: 1px solid color-mix(in srgb, var(--ll-lantern-amber) 22%, transparent);
+  max-width: 38rem;
+  animation: ll-rise var(--ll-duration-slow) var(--ll-ease-out) both;
+  animation-delay: 80ms;
+}
+
+.ll-about-note p {
+  margin: 0;
+  font-family: var(--ll-font-display);
+  font-size: var(--ll-fs-body-lg);
+  line-height: var(--ll-lh-title);
+  color: var(--ll-night-teal);
+}
+
+.ll-about-note__attrib {
+  margin-top: var(--ll-space-3);
+  font-family: var(--ll-font-body);
+  font-size: var(--ll-fs-label);
+  letter-spacing: var(--ll-tracking-label);
+  text-transform: uppercase;
+  color: var(--ll-color-text-muted);
+}
+
+.ll-about-cta {
+  display: grid;
+  gap: var(--ll-space-5);
+  justify-items: start;
+}
+
+.ll-about-cta h2 {
+  margin: 0;
+  max-width: 18ch;
+}
+
+.ll-about-cta .ll-lede {
+  margin: 0;
+}
+
+@media (max-width: 820px) {
+  .ll-about-split,
+  .ll-about-split--flip {
+    grid-template-columns: 1fr;
+  }
+
+  .ll-about-split--flip .ll-about-mat {
+    order: -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ll-about-hero,
+  .ll-about-note {
+    animation: none !important;
+  }
+}

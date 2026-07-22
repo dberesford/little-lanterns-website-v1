@@ -1,0 +1,59 @@
+# Little Lanterns website v1 — Netlify static hosting (LIT-75)
+# Publish directory = site root (this folder). No build step.
+
+[build]
+  publish = "."
+  command = "echo 'static site — no build'"
+
+[[redirects]]
+  from = "/our-story"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/our-story/"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/for-caregivers"
+  to = "/caregivers/"
+  status = 301
+
+[[redirects]]
+  from = "/for-caregivers/"
+  to = "/caregivers/"
+  status = 301
+
+# Pretty directory URLs without trailing-slash breakage
+[[redirects]]
+  from = "/books"
+  to = "/books/"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/caregivers"
+  to = "/caregivers/"
+  status = 301
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

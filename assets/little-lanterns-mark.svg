@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 180" fill="none">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fde68a" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#fcd34d" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#fcd34d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- warm glow -->
+  <circle cx="80" cy="92" r="66" fill="url(#glow)"/>
+
+  <!-- lantern -->
+  <g stroke="#1f3a5f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- handle -->
+    <path d="M64 42 Q80 24 96 42" fill="none"/>
+    <!-- top cap -->
+    <path d="M66 50 L94 50 L88 42 L72 42 Z" fill="#1f3a5f"/>
+    <!-- body -->
+    <rect x="60" y="54" width="40" height="62" rx="7" fill="#fffbeb"/>
+    <!-- base -->
+    <path d="M66 116 L94 116 L98 126 L62 126 Z" fill="#1f3a5f"/>
+  </g>
+  <!-- flame -->
+  <path d="M80 70 C86 78 86 88 80 96 C74 88 74 78 80 70 Z" fill="#f59e0b"/>
+  <circle cx="80" cy="90" r="4" fill="#fde68a"/>
+
+  <!-- wordmark -->
+  <text x="150" y="88" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#1f3a5f">Little Lanterns</text>
+  <text x="152" y="114" font-family="system-ui,sans-serif" font-size="14" fill="#64748b">a fake press with a real org chart</text>
+</svg>

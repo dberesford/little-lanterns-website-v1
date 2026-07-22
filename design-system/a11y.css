@@ -1,0 +1,248 @@
+/**
+ * Little Lanterns — Accessibility primitives (WCAG AA)
+ * Issue: LIT-74
+ * Depends on: tokens.css, components.css
+ *
+ * Import after components.css on every page.
+ */
+
+/* —— Skip link —— */
+.ll-skip {
+  position: absolute;
+  inset-inline-start: var(--ll-gutter);
+  top: var(--ll-space-3);
+  z-index: 1000;
+  padding: 0.65rem 1rem;
+  border-radius: var(--ll-radius-md);
+  background: var(--ll-night-teal);
+  color: var(--ll-mist-paper);
+  font-weight: var(--ll-fw-semibold);
+  text-decoration: none;
+  transform: translateY(-200%);
+  transition: transform var(--ll-duration-fast) var(--ll-ease-out);
+}
+
+.ll-skip:focus,
+.ll-skip:focus-visible {
+  transform: translateY(0);
+  box-shadow: var(--ll-shadow-focus);
+  outline: none;
+  color: var(--ll-mist-paper);
+}
+
+/* —— Focus: dual ring works on mist + inverse —— */
+:focus-visible {
+  outline: 3px solid var(--ll-lantern-amber);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px var(--ll-night-teal);
+}
+
+.ll-band-inverse :focus-visible,
+.ll-btn--on-dark:focus-visible,
+.ll-btn--glow:focus-visible {
+  outline-color: var(--ll-window-warm);
+  box-shadow: 0 0 0 3px var(--ll-night-teal);
+}
+
+/* —— Body links: never color-only —— */
+a:not(.ll-btn):not(.ll-book-tile):not(.ll-nav__link):not(.ll-brand-link) {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
+}
+
+/* —— Site header / primary nav —— */
+.ll-site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--ll-mist-paper) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ll-color-border);
+}
+
+.ll-site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ll-space-4);
+  min-height: 3.75rem;
+  padding-block: var(--ll-space-3);
+}
+
+.ll-brand-link {
+  font-family: var(--ll-font-display);
+  font-size: 1.35rem;
+  font-weight: var(--ll-fw-semibold);
+  color: var(--ll-color-brand);
+  text-decoration: none;
+  letter-spacing: var(--ll-tracking-display);
+}
+
+.ll-brand-link:hover {
+  color: var(--ll-color-brand);
+  text-decoration: none;
+}
+
+.ll-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--ll-space-2);
+}
+
+.ll-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ll-space-1) var(--ll-space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ll-nav__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.25rem 0.15rem;
+  color: var(--ll-color-text);
+  font-weight: var(--ll-fw-medium);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.ll-nav__link:hover {
+  color: var(--ll-color-link-hover);
+  text-decoration: none;
+}
+
+/* Active: weight + underline — not color alone (WCAG 1.4.1) */
+.ll-nav__link[aria-current="page"] {
+  font-weight: var(--ll-fw-bold);
+  border-bottom-color: var(--ll-lantern-amber);
+  color: var(--ll-night-teal);
+}
+
+.ll-nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--ll-control-h-md);
+  height: var(--ll-control-h-md);
+  border: 1.5px solid var(--ll-color-border-strong);
+  border-radius: var(--ll-radius-md);
+  background: transparent;
+  color: var(--ll-night-teal);
+  cursor: pointer;
+}
+
+.ll-nav-toggle__icon {
+  display: block;
+  width: 1.15rem;
+  height: 2px;
+  background: currentColor;
+  box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
+}
+
+@media (max-width: 719px) {
+  .ll-nav-toggle {
+    display: inline-flex;
+  }
+
+  .ll-nav {
+    position: absolute;
+    inset-inline: var(--ll-gutter);
+    top: calc(100% + 0.35rem);
+    display: none;
+    padding: var(--ll-space-4);
+    border-radius: var(--ll-radius-lg);
+    background: var(--ll-color-bg-elevated);
+    border: 1px solid var(--ll-color-border-strong);
+    box-shadow: var(--ll-shadow-soft);
+  }
+
+  .ll-nav[data-open="true"] {
+    display: block;
+  }
+
+  .ll-nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .ll-nav__link {
+    width: 100%;
+    min-height: 2.75rem;
+    padding-inline: var(--ll-space-2);
+    border-bottom: 0;
+    border-inline-start: 3px solid transparent;
+  }
+
+  .ll-nav__link[aria-current="page"] {
+    border-inline-start-color: var(--ll-lantern-amber);
+    background: color-mix(in srgb, var(--ll-window-warm) 35%, transparent);
+  }
+}
+
+/* —— Main landmark target for skip —— */
+#main-content:focus {
+  outline: none;
+}
+
+#main-content:focus-visible {
+  outline: 3px solid var(--ll-lantern-amber);
+  outline-offset: 4px;
+}
+
+/* —— Decorative imagery helper —— */
+.ll-img-decorative {
+  pointer-events: none;
+}
+
+/* Require alt on content images; empty alt for decorative is OK when marked */
+img:not([alt]) {
+  outline: 2px dashed var(--ll-ember-coral);
+}
+
+/* —— Stakes / coral: large text only unless darkened —— */
+.ll-text-stakes {
+  color: #a63f28; /* darkened Ember Coral — AA on Mist Paper (~4.6:1) */
+  font-weight: var(--ll-fw-semibold);
+}
+
+/* —— Reduced motion: kill transform/animation, not just duration —— */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .ll-book-tile:hover,
+  .ll-btn:active {
+    transform: none;
+  }
+}
+
+/* —— Print / caregiver readability —— */
+@media print {
+  .ll-site-header,
+  .ll-skip,
+  .ll-nav-toggle {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}

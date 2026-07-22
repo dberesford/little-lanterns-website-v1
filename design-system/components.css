@@ -1,0 +1,421 @@
+/**
+ * Little Lanterns — Component primitives
+ * Depends on tokens.css
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ll-font-body);
+  font-size: var(--ll-fs-body);
+  font-weight: var(--ll-fw-regular);
+  line-height: var(--ll-lh-body);
+  color: var(--ll-color-text);
+  background:
+    radial-gradient(
+      120% 80% at 80% -10%,
+      color-mix(in srgb, var(--ll-window-warm) 35%, transparent),
+      transparent 55%
+    ),
+    radial-gradient(
+      90% 60% at 0% 100%,
+      color-mix(in srgb, var(--ll-soft-sage) 18%, transparent),
+      transparent 50%
+    ),
+    var(--ll-color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--ll-color-link);
+  text-underline-offset: 0.18em;
+  transition: color var(--ll-duration-fast) var(--ll-ease-out);
+}
+
+a:hover {
+  color: var(--ll-color-link-hover);
+}
+
+:focus-visible {
+  outline: 3px solid var(--ll-lantern-amber);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px var(--ll-night-teal);
+}
+
+/* —— Type roles —— */
+.ll-brand {
+  font-family: var(--ll-font-display);
+  font-weight: var(--ll-fw-semibold);
+  font-optical-sizing: auto;
+  letter-spacing: var(--ll-tracking-display);
+  color: var(--ll-color-brand);
+}
+
+.ll-display {
+  font-family: var(--ll-font-display);
+  font-weight: var(--ll-fw-semibold);
+  font-optical-sizing: auto;
+  line-height: var(--ll-lh-display);
+  letter-spacing: var(--ll-tracking-display);
+  color: var(--ll-color-text);
+}
+
+.ll-display-xl { font-size: var(--ll-fs-display-xl); }
+.ll-display-lg { font-size: var(--ll-fs-display-lg); }
+.ll-display-md { font-size: var(--ll-fs-display-md); }
+
+.ll-title {
+  font-family: var(--ll-font-display);
+  font-size: var(--ll-fs-title);
+  font-weight: var(--ll-fw-semibold);
+  line-height: var(--ll-lh-title);
+}
+
+.ll-lede {
+  font-size: var(--ll-fs-body-lg);
+  max-width: var(--ll-prose-max);
+  color: var(--ll-color-text-muted);
+}
+
+.ll-label {
+  font-family: var(--ll-font-ui);
+  font-size: var(--ll-fs-label);
+  font-weight: var(--ll-fw-semibold);
+  letter-spacing: var(--ll-tracking-label);
+  text-transform: uppercase;
+  color: var(--ll-color-text-muted);
+}
+
+.ll-caption {
+  font-size: var(--ll-fs-caption);
+  line-height: var(--ll-lh-tight);
+  color: var(--ll-color-text-muted);
+}
+
+.ll-prose {
+  max-width: var(--ll-prose-max);
+}
+
+.ll-prose > * + * {
+  margin-top: var(--ll-space-4);
+}
+
+/* —— Layout —— */
+.ll-shell {
+  width: min(100% - (var(--ll-gutter) * 2), var(--ll-content-max));
+  margin-inline: auto;
+}
+
+.ll-section {
+  padding-block: var(--ll-section-y);
+}
+
+.ll-band-inverse {
+  background: linear-gradient(
+    165deg,
+    var(--ll-porch-blue) 0%,
+    var(--ll-night-teal) 58%,
+    #102a2e 100%
+  );
+  color: var(--ll-color-text-on-inverse);
+}
+
+.ll-band-inverse .ll-brand,
+.ll-band-inverse .ll-display,
+.ll-band-inverse .ll-title {
+  color: var(--ll-color-text-on-inverse);
+}
+
+.ll-band-inverse .ll-lede,
+.ll-band-inverse .ll-caption,
+.ll-band-inverse .ll-label {
+  /* ≥85% mist over night teal keeps ~8:1; avoid dropping below ~78% (~7:1) */
+  color: color-mix(in srgb, var(--ll-mist-paper) 88%, transparent);
+}
+
+.ll-band-settle {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--ll-window-warm) 55%, var(--ll-mist-paper)),
+      var(--ll-mist-paper)
+    );
+}
+
+/* —— Buttons —— */
+.ll-btn {
+  --ll-btn-bg: var(--ll-night-teal);
+  --ll-btn-fg: var(--ll-mist-paper);
+  --ll-btn-border: transparent;
+  --ll-btn-hover: color-mix(in srgb, var(--ll-night-teal) 88%, #000);
+
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ll-space-2);
+  min-height: var(--ll-control-h-md);
+  padding: 0 var(--ll-space-5);
+  border: 1.5px solid var(--ll-btn-border);
+  border-radius: var(--ll-radius-md);
+  background: var(--ll-btn-bg);
+  color: var(--ll-btn-fg);
+  font-family: var(--ll-font-ui);
+  font-size: var(--ll-fs-body-sm);
+  font-weight: var(--ll-fw-semibold);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background var(--ll-duration-fast) var(--ll-ease-out),
+    color var(--ll-duration-fast) var(--ll-ease-out),
+    border-color var(--ll-duration-fast) var(--ll-ease-out),
+    transform var(--ll-duration-fast) var(--ll-ease-out),
+    box-shadow var(--ll-duration-med) var(--ll-ease-out);
+}
+
+.ll-btn:hover {
+  background: var(--ll-btn-hover);
+  color: var(--ll-btn-fg);
+  text-decoration: none;
+}
+
+.ll-btn:active {
+  transform: translateY(1px);
+}
+
+.ll-btn:disabled,
+.ll-btn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ll-btn--lg {
+  min-height: var(--ll-control-h-lg);
+  padding-inline: var(--ll-space-6);
+  font-size: var(--ll-fs-body);
+}
+
+.ll-btn--sm {
+  min-height: var(--ll-control-h-sm);
+  padding-inline: var(--ll-space-4);
+  font-size: var(--ll-fs-label);
+}
+
+.ll-btn--primary {
+  --ll-btn-bg: var(--ll-night-teal);
+  --ll-btn-fg: var(--ll-mist-paper);
+  --ll-btn-hover: color-mix(in srgb, var(--ll-night-teal) 86%, #000);
+}
+
+.ll-btn--glow {
+  --ll-btn-bg: var(--ll-lantern-amber);
+  --ll-btn-fg: var(--ll-night-teal);
+  --ll-btn-hover: color-mix(in srgb, var(--ll-lantern-amber) 88%, #fff);
+  box-shadow: var(--ll-shadow-glow);
+}
+
+.ll-btn--quiet {
+  --ll-btn-bg: transparent;
+  --ll-btn-fg: var(--ll-night-teal);
+  --ll-btn-border: var(--ll-color-border-strong);
+  --ll-btn-hover: color-mix(in srgb, var(--ll-soft-sage) 22%, var(--ll-mist-paper));
+}
+
+.ll-btn--on-dark {
+  --ll-btn-bg: var(--ll-mist-paper);
+  --ll-btn-fg: var(--ll-night-teal);
+  --ll-btn-hover: color-mix(in srgb, var(--ll-mist-paper) 88%, var(--ll-window-warm));
+}
+
+.ll-btn--on-dark.ll-btn--quiet {
+  --ll-btn-bg: transparent;
+  --ll-btn-fg: var(--ll-mist-paper);
+  --ll-btn-border: color-mix(in srgb, var(--ll-mist-paper) 45%, transparent);
+  --ll-btn-hover: color-mix(in srgb, var(--ll-mist-paper) 12%, transparent);
+}
+
+.ll-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ll-space-3);
+}
+
+/* —— Interactive surfaces (books / caregiver tools) —— */
+.ll-book-tile {
+  display: grid;
+  gap: var(--ll-space-4);
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--ll-duration-med) var(--ll-ease-out);
+}
+
+.ll-book-tile:hover {
+  transform: translateY(-3px);
+  color: inherit;
+  text-decoration: none;
+}
+
+.ll-book-tile__cover {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--ll-radius-lg);
+  overflow: hidden;
+  background: var(--ll-night-teal);
+  box-shadow: var(--ll-shadow-soft);
+}
+
+.ll-book-tile__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ll-book-tile__cover::after {
+  content: "";
+  position: absolute;
+  inset: auto 18% 12% 18%;
+  height: 28%;
+  border-radius: 50%;
+  background: var(--ll-glow-shy);
+  filter: blur(18px);
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.ll-book-tile__meta {
+  display: grid;
+  gap: var(--ll-space-1);
+}
+
+.ll-care-panel {
+  display: grid;
+  gap: var(--ll-space-3);
+  padding: var(--ll-space-5);
+  border-radius: var(--ll-radius-lg);
+  background: color-mix(in srgb, var(--ll-window-warm) 42%, var(--ll-mist-paper));
+  border: 1px solid color-mix(in srgb, var(--ll-lantern-amber) 28%, transparent);
+}
+
+.ll-care-panel__title {
+  margin: 0;
+  font-family: var(--ll-font-display);
+  font-size: var(--ll-fs-title);
+}
+
+/* —— Imagery treatment —— */
+.ll-media-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+  background: var(--ll-night-teal);
+}
+
+.ll-media-bleed img {
+  width: 100%;
+  max-height: min(72vh, 44rem);
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.ll-media-frame {
+  position: relative;
+  border-radius: var(--ll-radius-lg);
+  overflow: hidden;
+  background: var(--ll-porch-blue);
+  box-shadow: var(--ll-shadow-soft);
+}
+
+.ll-media-frame--lantern-glow::after {
+  content: "";
+  position: absolute;
+  inset: 55% 30% 8% 30%;
+  border-radius: 50%;
+  background: var(--ll-glow-soft-true);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+.ll-media-mat {
+  padding: var(--ll-space-3);
+  background: var(--ll-mist-paper);
+  border: 1px solid var(--ll-color-border);
+  border-radius: var(--ll-radius-lg);
+}
+
+.ll-media-mat > .ll-media-frame {
+  border-radius: calc(var(--ll-radius-lg) - 4px);
+}
+
+/* —— Forms (caregiver tools) —— */
+.ll-field {
+  display: grid;
+  gap: var(--ll-space-2);
+}
+
+.ll-input,
+.ll-select,
+.ll-textarea {
+  width: 100%;
+  min-height: var(--ll-control-h-md);
+  padding: 0.65rem 0.9rem;
+  border: 1.5px solid var(--ll-color-border-strong);
+  border-radius: var(--ll-radius-md);
+  background: #fff;
+  color: var(--ll-color-text);
+  font: inherit;
+}
+
+.ll-textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.ll-input:focus-visible,
+.ll-select:focus-visible,
+.ll-textarea:focus-visible {
+  border-color: var(--ll-lantern-amber);
+}
+
+/* —— Utilities —— */
+.ll-stack-2 { display: grid; gap: var(--ll-space-2); }
+.ll-stack-3 { display: grid; gap: var(--ll-space-3); }
+.ll-stack-4 { display: grid; gap: var(--ll-space-4); }
+.ll-stack-5 { display: grid; gap: var(--ll-space-5); }
+.ll-stack-6 { display: grid; gap: var(--ll-space-6); }
+
+.ll-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ll-space-3);
+  align-items: center;
+}
+
+.ll-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

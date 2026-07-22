@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">A porch lantern glowing softly at dusk</title>
+  <desc id="heroDesc">Warm amber light from a small lantern against a quiet teal night sky and porch silhouette.</desc>
+  <defs>
+    <radialGradient id="skyGlow" cx="62%" cy="58%" r="45%">
+      <stop offset="0%" stop-color="#F3D9A0" stop-opacity="0.55"/>
+      <stop offset="35%" stop-color="#E4A01A" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#163A3F" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0%" stop-color="#2C4A62"/>
+      <stop offset="55%" stop-color="#163A3F"/>
+      <stop offset="100%" stop-color="#102A2E"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F6E2A8"/>
+      <stop offset="55%" stop-color="#E4A01A"/>
+      <stop offset="100%" stop-color="#C48412"/>
+    </linearGradient>
+    <filter id="softBlur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="28"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <circle cx="740" cy="470" r="220" fill="url(#skyGlow)"/>
+  <ellipse cx="740" cy="620" rx="160" ry="48" fill="#E4A01A" opacity="0.35" filter="url(#softBlur)"/>
+  <!-- porch roof hint -->
+  <path d="M0 560 L280 420 L520 560 L520 800 L0 800 Z" fill="#102A2E" opacity="0.55"/>
+  <path d="M0 560 L280 420 L520 560" fill="none" stroke="#8FA88A" stroke-opacity="0.25" stroke-width="2"/>
+  <!-- distant trees -->
+  <g fill="#102A2E" opacity="0.45">
+    <ellipse cx="980" cy="620" rx="70" ry="110"/>
+    <ellipse cx="1080" cy="640" rx="55" ry="90"/>
+    <ellipse cx="90" cy="680" rx="80" ry="100"/>
+  </g>
+  <!-- lantern body -->
+  <g transform="translate(700 300)">
+    <path d="M28 -28 h24 a18 18 0 0 1 18 18 v6 h-60 v-6 a18 18 0 0 1 18 -18 z" fill="none" stroke="#8B6914" stroke-width="6" stroke-linejoin="round"/>
+    <rect x="0" y="0" width="80" height="130" rx="10" fill="url(#glass)" stroke="#8B6914" stroke-width="5"/>
+    <rect x="12" y="14" width="56" height="102" rx="6" fill="#FFF6D8" opacity="0.35"/>
+    <line x1="40" y1="14" x2="40" y2="116" stroke="#8B6914" stroke-width="3" opacity="0.45"/>
+    <line x1="12" y1="58" x2="68" y2="58" stroke="#8B6914" stroke-width="3" opacity="0.35"/>
+    <path d="M-6 130 h92 l-10 22 h-72 z" fill="#8B6914"/>
+    <circle cx="40" cy="72" r="14" fill="#FFF8E7" opacity="0.85"/>
+  </g>
+  <!-- ground -->
+  <rect y="700" width="1200" height="100" fill="#102A2E" opacity="0.65"/>
+  <path d="M0 700 Q600 660 1200 700 L1200 800 L0 800 Z" fill="#163A3F" opacity="0.5"/>
+</svg>

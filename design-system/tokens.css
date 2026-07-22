@@ -1,0 +1,131 @@
+/**
+ * Little Lanterns — Web Design Tokens
+ * Visual system: Porch Lantern Folklore (Art Director lock: LIT-15 / LIT-59)
+ * Issue: LIT-69
+ *
+ * Import once at the app root. Component styles live in components.css.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
+:root {
+  /* —— Brand color (locked AD palette) —— */
+  --ll-lantern-amber: #e4a01a;
+  --ll-night-teal: #163a3f;
+  --ll-mist-paper: #eef2ef;
+  --ll-ember-coral: #d45a3a;
+  --ll-soft-sage: #8fa88a;
+  --ll-porch-blue: #2c4a62;
+  --ll-firefly-lime: #c6d96a;
+  --ll-window-warm: #f3d9a0;
+
+  /* —— Semantic roles (web) —— */
+  --ll-color-bg: var(--ll-mist-paper);
+  --ll-color-bg-elevated: #f7f9f7;
+  --ll-color-bg-inverse: var(--ll-night-teal);
+  --ll-color-bg-dusk: var(--ll-porch-blue);
+  --ll-color-bg-settle: var(--ll-window-warm);
+
+  --ll-color-text: var(--ll-night-teal);
+  --ll-color-text-muted: #3d5a5e;
+  --ll-color-text-on-inverse: var(--ll-mist-paper);
+  --ll-color-text-on-dusk: var(--ll-mist-paper);
+
+  --ll-color-brand: var(--ll-night-teal);
+  --ll-color-accent: var(--ll-lantern-amber);
+  --ll-color-accent-soft: var(--ll-window-warm);
+  --ll-color-calm: var(--ll-soft-sage);
+  --ll-color-neighbor: var(--ll-firefly-lime);
+  --ll-color-stakes: var(--ll-ember-coral);
+  /* Darkened coral for small text on Mist Paper (~4.6:1 AA). Raw Ember Coral is large-text only. */
+  --ll-color-stakes-text: #a63f28;
+  --ll-color-border: color-mix(in srgb, var(--ll-night-teal) 14%, transparent);
+  --ll-color-border-strong: color-mix(in srgb, var(--ll-night-teal) 28%, transparent);
+  --ll-color-focus: var(--ll-lantern-amber);
+  --ll-color-link: var(--ll-porch-blue);
+  --ll-color-link-hover: var(--ll-night-teal);
+
+  /* —— Glow (local lantern treatment — never page-wide glitter) —— */
+  --ll-glow-shy: color-mix(in srgb, var(--ll-lantern-amber) 35%, transparent);
+  --ll-glow-soft-true: color-mix(in srgb, var(--ll-window-warm) 55%, transparent);
+  --ll-glow-settle: color-mix(in srgb, var(--ll-window-warm) 40%, transparent);
+
+  /* —— Typography —— */
+  --ll-font-display: "Fraunces", "Palatino Linotype", Palatino, serif;
+  --ll-font-body: "Source Sans 3", "Source Sans Pro", "Segoe UI", sans-serif;
+  --ll-font-ui: var(--ll-font-body);
+
+  --ll-fs-display-xl: clamp(2.5rem, 1.8rem + 2.8vw, 3.75rem);
+  --ll-fs-display-lg: clamp(2rem, 1.55rem + 1.8vw, 2.75rem);
+  --ll-fs-display-md: clamp(1.625rem, 1.4rem + 0.9vw, 2rem);
+  --ll-fs-title: 1.375rem;
+  --ll-fs-body-lg: 1.1875rem;
+  --ll-fs-body: 1.0625rem;
+  --ll-fs-body-sm: 0.9375rem;
+  --ll-fs-label: 0.8125rem;
+  --ll-fs-caption: 0.75rem;
+
+  --ll-lh-display: 1.15;
+  --ll-lh-title: 1.3;
+  --ll-lh-body: 1.65;
+  --ll-lh-tight: 1.35;
+
+  --ll-tracking-display: -0.01em;
+  --ll-tracking-label: 0.06em;
+
+  --ll-fw-regular: 400;
+  --ll-fw-medium: 500;
+  --ll-fw-semibold: 600;
+  --ll-fw-bold: 700;
+
+  /* —— Spacing (4px base) —— */
+  --ll-space-1: 0.25rem;
+  --ll-space-2: 0.5rem;
+  --ll-space-3: 0.75rem;
+  --ll-space-4: 1rem;
+  --ll-space-5: 1.5rem;
+  --ll-space-6: 2rem;
+  --ll-space-7: 3rem;
+  --ll-space-8: 4rem;
+  --ll-space-9: 6rem;
+
+  --ll-section-y: clamp(3.5rem, 2.5rem + 4vw, 6rem);
+  --ll-gutter: clamp(1.25rem, 1rem + 2vw, 2rem);
+  --ll-content-max: 68rem;
+  --ll-prose-max: 38rem;
+  --ll-narrow-max: 28rem;
+
+  /* —— Radius / elevation —— */
+  --ll-radius-sm: 0.375rem;
+  --ll-radius-md: 0.75rem;
+  --ll-radius-lg: 1.25rem;
+  --ll-radius-pill: 999px;
+
+  --ll-shadow-soft: 0 10px 30px color-mix(in srgb, var(--ll-night-teal) 10%, transparent);
+  --ll-shadow-glow: 0 0 0 1px var(--ll-glow-shy), 0 12px 36px var(--ll-glow-soft-true);
+  /* Dual-tone focus: teal halo + amber outline (see a11y.css for :focus-visible) */
+  --ll-shadow-focus: 0 0 0 3px var(--ll-night-teal), 0 0 0 6px var(--ll-color-focus);
+
+  /* —— Motion —— */
+  --ll-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ll-duration-fast: 140ms;
+  --ll-duration-med: 280ms;
+  --ll-duration-slow: 520ms;
+
+  /* —— Control sizes —— */
+  --ll-control-h-sm: 2.25rem;
+  --ll-control-h-md: 2.75rem;
+  --ll-control-h-lg: 3.25rem;
+  --ll-icon-sm: 1rem;
+  --ll-icon-md: 1.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ll-duration-fast: 0ms;
+    --ll-duration-med: 0ms;
+    --ll-duration-slow: 0ms;
+  }
+}
+
+/* Full transform/animation kill lives in a11y.css */

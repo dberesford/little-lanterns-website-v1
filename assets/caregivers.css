@@ -1,0 +1,196 @@
+/**
+ * Caregivers page — layout beyond shared site chrome.
+ */
+
+.ll-care-hero__brand {
+  font-size: clamp(2.75rem, 2rem + 2.8vw, 4rem);
+  margin: var(--ll-space-2) 0 var(--ll-space-3);
+  display: block;
+}
+
+.ll-care-hero__headline {
+  max-width: 16ch;
+  margin: 0 0 var(--ll-space-4);
+}
+
+.ll-care-why {
+  display: grid;
+  gap: var(--ll-space-5);
+  max-width: var(--ll-prose-max);
+}
+
+.ll-care-tips {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 860px) {
+  .ll-care-tips {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.ll-care-art {
+  margin: 0;
+  display: grid;
+  gap: var(--ll-space-3);
+  max-width: 42rem;
+}
+
+.ll-care-art img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.ll-care-practice {
+  display: grid;
+  gap: var(--ll-space-6);
+}
+
+@media (min-width: 800px) {
+  .ll-care-practice {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--ll-space-6);
+  }
+}
+
+.ll-care-practice .ll-title {
+  color: var(--ll-window-warm);
+  margin: 0;
+}
+
+.ll-care-practice p {
+  margin: 0;
+  color: color-mix(in srgb, var(--ll-mist-paper) 88%, transparent);
+  max-width: 28ch;
+}
+
+.ll-care-prompts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--ll-space-3);
+  counter-reset: prompt;
+  max-width: 40rem;
+}
+
+.ll-care-prompts li {
+  counter-increment: prompt;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--ll-space-4);
+  align-items: start;
+  padding: var(--ll-space-4) 0;
+  border-bottom: 1px solid var(--ll-color-border);
+  font-size: var(--ll-fs-body-lg);
+}
+
+.ll-care-prompts li::before {
+  content: counter(prompt, decimal-leading-zero);
+  font-family: var(--ll-font-display);
+  font-weight: var(--ll-fw-semibold);
+  color: var(--ll-porch-blue);
+  font-size: var(--ll-fs-title);
+  line-height: 1.2;
+}
+
+.ll-care-companion {
+  display: grid;
+  gap: var(--ll-space-6);
+  align-items: start;
+}
+
+@media (min-width: 800px) {
+  .ll-care-companion {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.ll-care-includes {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: var(--ll-space-2);
+}
+
+.ll-care-includes li::marker {
+  color: var(--ll-lantern-amber);
+}
+
+/* —— Printable companion sheet —— */
+.ll-companion-sheet {
+  max-width: 40rem;
+  margin-inline: auto;
+  padding: var(--ll-space-7) var(--ll-gutter);
+}
+
+.ll-companion-sheet__brand {
+  font-size: 1.75rem;
+  margin: 0 0 var(--ll-space-2);
+}
+
+.ll-companion-sheet h1 {
+  margin: 0 0 var(--ll-space-3);
+}
+
+.ll-companion-sheet h2 {
+  margin: var(--ll-space-6) 0 var(--ll-space-3);
+}
+
+.ll-companion-sheet ul,
+.ll-companion-sheet ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: var(--ll-space-2);
+}
+
+.ll-companion-actions {
+  margin-top: var(--ll-space-6);
+}
+
+@media print {
+  .ll-header,
+  .ll-footer,
+  .ll-skip,
+  .ll-nav-toggle,
+  .ll-companion-actions,
+  .ll-btn-row,
+  [data-print-page] {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .ll-care-panel {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  .ll-band-inverse {
+    background: #fff !important;
+    color: var(--ll-night-teal) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .ll-band-inverse .ll-display,
+  .ll-band-inverse .ll-title,
+  .ll-band-inverse .ll-brand,
+  .ll-care-practice .ll-title {
+    color: var(--ll-night-teal) !important;
+  }
+
+  .ll-band-inverse .ll-lede,
+  .ll-care-practice p {
+    color: var(--ll-color-text-muted) !important;
+  }
+
+  .ll-companion-sheet {
+    padding: 0;
+  }
+}
