@@ -15,11 +15,12 @@
     />
     <link rel="stylesheet" href="../design-system/tokens.css" />
     <link rel="stylesheet" href="../design-system/components.css" />
+    <link rel="stylesheet" href="../design-system/a11y.css" />
     <link rel="stylesheet" href="../assets/site.css" />
     <link rel="stylesheet" href="../assets/about.css" />
   </head>
   <body>
-    <a class="ll-skip ll-btn ll-btn--glow" href="#main">Skip to content</a>
+    <a class="ll-skip ll-btn ll-btn--glow" href="#main-content">Skip to main content</a>
 
     <header class="ll-header">
       <div class="ll-shell ll-header__inner">
@@ -30,7 +31,7 @@
             alt=""
             width="36"
             height="36"
-          />
+           aria-hidden="true" />
           <span class="ll-brand ll-logo__word">Little Lanterns</span>
         </a>
         <button
@@ -64,7 +65,7 @@
       </div>
     </header>
 
-    <main id="main">
+    <main id="main-content" tabindex="-1">
       <section class="ll-about-hero" aria-labelledby="about-heading">
         <div class="ll-shell">
           <p class="ll-label">Our Story</p>

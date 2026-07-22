@@ -10,6 +10,7 @@
     />
     <link rel="stylesheet" href="../design-system/tokens.css" />
     <link rel="stylesheet" href="../design-system/components.css" />
+    <link rel="stylesheet" href="../design-system/a11y.css" />
     <link rel="stylesheet" href="../assets/site.css" />
     <link rel="stylesheet" href="../assets/caregivers.css" />
   </head>
@@ -18,7 +19,7 @@
 
     <header class="ll-header">
       <div class="ll-shell ll-header__inner">
-        <a class="ll-logo" href="/">
+        <a class="ll-logo" href="../index.html">
           <img
             class="ll-logo__mark"
             src="../assets/little-lanterns-mark.svg"
@@ -30,13 +31,13 @@
         </a>
         <nav class="ll-nav" aria-label="Primary" style="display: flex">
           <ul class="ll-nav__list">
-            <li><a class="ll-nav__link" href="/caregivers">← For Caregivers</a></li>
+            <li><a class="ll-nav__link" href="../caregivers/index.html">← For Caregivers</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main id="sheet" class="ll-companion-sheet">
+    <main id="sheet" class="ll-companion-sheet" tabindex="-1">
       <p class="ll-brand ll-companion-sheet__brand">Little Lanterns</p>
       <h1 class="ll-display ll-display-md">Read-aloud companion</h1>
       <p class="ll-lede">
@@ -47,7 +48,7 @@
         <button class="ll-btn ll-btn--glow" type="button" data-print-page>
           Print this sheet
         </button>
-        <a class="ll-btn ll-btn--quiet" href="/caregivers">Back to tips</a>
+        <a class="ll-btn ll-btn--quiet" href="../caregivers/index.html">Back to tips</a>
       </div>
 
       <h2 class="ll-title">Tonight’s tips</h2>
@@ -87,7 +88,7 @@
 
       <p class="ll-caption" style="margin-top: 2rem">
         Book page:
-        <a href="/books/the-softest-glow">littlelanterns.* /books/the-softest-glow</a>
+        <a href="../books/the-softest-glow/index.html">littlelanterns.* /books/the-softest-glow</a>
       </p>
     </main>
 

@@ -14,23 +14,24 @@
       content="A shy night-lantern teaches that soft light is still brave light."
     />
     <meta property="og:image" content="/assets/the-softest-glow-cover.png" />
-    <link rel="stylesheet" href="/design-system/tokens.css" />
-    <link rel="stylesheet" href="/design-system/components.css" />
-    <link rel="stylesheet" href="/assets/site.css" />
+    <link rel="stylesheet" href="../../design-system/tokens.css" />
+    <link rel="stylesheet" href="../../design-system/components.css" />
+    <link rel="stylesheet" href="../../design-system/a11y.css" />
+    <link rel="stylesheet" href="../../assets/site.css" />
   </head>
   <body>
-    <a class="ll-btn ll-btn--glow ll-skip" href="#main">Skip to content</a>
+    <a class="ll-btn ll-btn--glow ll-skip" href="#main-content">Skip to main content</a>
 
     <header class="ll-header">
       <div class="ll-shell ll-header__inner">
-        <a class="ll-logo" href="/">
+        <a class="ll-logo" href="../../index.html">
           <img
             class="ll-logo__mark"
-            src="/assets/little-lanterns-lantern.svg"
+            src="../../assets/little-lanterns-lantern.svg"
             width="36"
             height="36"
             alt=""
-          />
+           aria-hidden="true" />
           <span class="ll-brand ll-logo__word">Little Lanterns</span>
         </a>
 
@@ -45,29 +46,29 @@
 
         <nav class="ll-nav" id="site-nav" aria-label="Primary">
           <ul class="ll-nav__list">
-            <li><a class="ll-nav__link" href="/">Home</a></li>
+            <li><a class="ll-nav__link" href="../../index.html">Home</a></li>
             <li>
-              <a class="ll-nav__link" href="/books" aria-current="page">Books</a>
+              <a class="ll-nav__link" href="../../books/index.html" aria-current="page">Books</a>
             </li>
-            <li><a class="ll-nav__link" href="/about">Our Story</a></li>
+            <li><a class="ll-nav__link" href="../../about/index.html">Our Story</a></li>
             <li>
-              <a class="ll-nav__link" href="/caregivers">For Caregivers</a>
+              <a class="ll-nav__link" href="../../caregivers/index.html">For Caregivers</a>
             </li>
           </ul>
-          <a class="ll-btn ll-btn--glow ll-btn--sm ll-header__cta" href="/books/the-softest-glow"
+          <a class="ll-btn ll-btn--glow ll-btn--sm ll-header__cta" href="../../books/the-softest-glow/index.html"
             >The Softest Glow</a
           >
         </nav>
       </div>
     </header>
 
-    <main id="main">
+    <main id="main-content" tabindex="-1">
       <section class="ll-section ll-shell" aria-labelledby="title-heading">
         <div class="ll-detail">
           <div class="ll-stack-4">
             <div class="ll-media-frame ll-media-frame--lantern-glow">
               <img
-                src="/assets/the-softest-glow-cover.png"
+                src="../../assets/the-softest-glow-cover.png"
                 width="875"
                 height="875"
                 alt="Cover of The Softest Glow — soft amber lantern light on a quiet porch at dusk"
@@ -112,7 +113,7 @@
               <a class="ll-btn ll-btn--glow ll-btn--lg" href="#get-the-book"
                 >Coming soon</a
               >
-              <a class="ll-btn ll-btn--quiet ll-btn--lg" href="/caregivers"
+              <a class="ll-btn ll-btn--quiet ll-btn--lg" href="../../caregivers/index.html"
                 >Tips for reading aloud</a
               >
             </div>
@@ -168,7 +169,7 @@
           <div class="ll-look">
             <figure>
               <img
-                src="/assets/LIT-66-softproof-pp07-08-compare.png"
+                src="../../assets/LIT-66-softproof-pp07-08-compare.png"
                 alt="Interior spread: neighboring lanterns blaze while Mira’s stays soft"
                 width="640"
                 height="640"
@@ -178,7 +179,7 @@
             </figure>
             <figure>
               <img
-                src="/assets/LIT-66-softproof-pp15-16-glow-out.png"
+                src="../../assets/LIT-66-softproof-pp15-16-glow-out.png"
                 alt="Interior spread: the shy glow flickers out"
                 width="640"
                 height="640"
@@ -188,7 +189,7 @@
             </figure>
             <figure>
               <img
-                src="/assets/LIT-66-softproof-pp27-28-shared-settle.png"
+                src="../../assets/LIT-66-softproof-pp27-28-shared-settle.png"
                 alt="Interior spread: quiet light helps everyone settle"
                 width="640"
                 height="640"
@@ -198,7 +199,7 @@
             </figure>
             <figure>
               <img
-                src="/assets/LIT-66-softproof-pp31-32-coda.png"
+                src="../../assets/LIT-66-softproof-pp31-32-coda.png"
                 alt="Interior coda: Soft is still light—and it stayed"
                 width="640"
                 height="640"
@@ -226,8 +227,8 @@
             Keep it short—closeness, not a lesson plan. More pacing tips live on the caregivers page.
           </p>
           <div class="ll-btn-row">
-            <a class="ll-btn ll-btn--primary" href="/caregivers">Read-aloud tips</a>
-            <a class="ll-btn ll-btn--quiet" href="/books">All books</a>
+            <a class="ll-btn ll-btn--primary" href="../../caregivers/index.html">Read-aloud tips</a>
+            <a class="ll-btn ll-btn--quiet" href="../../books/index.html">All books</a>
           </div>
         </aside>
       </section>
@@ -247,11 +248,10 @@
           <div class="ll-btn-row">
             <span
               class="ll-btn ll-btn--on-dark ll-btn--lg"
-              role="text"
               aria-disabled="true"
               >Coming soon</span
             >
-            <a class="ll-btn ll-btn--on-dark ll-btn--quiet ll-btn--lg" href="/caregivers"
+            <a class="ll-btn ll-btn--on-dark ll-btn--quiet ll-btn--lg" href="../../caregivers/index.html"
               >Tips for reading aloud</a
             >
           </div>
@@ -267,7 +267,7 @@
             On Little Lanterns Lane
           </h2>
           <p style="margin: 0; color: var(--ll-color-text-muted)">
-            This is Book 1. Future titles will join the catalog at <a href="/books">/books</a> without changing the primary nav—each with its own cover, blurb, and read-aloud support.
+            This is Book 1. Future titles will join the catalog at <a href="../../books/index.html">/books</a> without changing the primary nav—each with its own cover, blurb, and read-aloud support.
           </p>
         </div>
       </section>
@@ -283,16 +283,16 @@
           <div>
             <p class="ll-footer__heading">Explore</p>
             <ul class="ll-footer__list">
-              <li><a href="/">Home</a></li>
-              <li><a href="/books">Books</a></li>
-              <li><a href="/about">Our Story</a></li>
-              <li><a href="/caregivers">For Caregivers</a></li>
+              <li><a href="../../index.html">Home</a></li>
+              <li><a href="../../books/index.html">Books</a></li>
+              <li><a href="../../about/index.html">Our Story</a></li>
+              <li><a href="../../caregivers/index.html">For Caregivers</a></li>
             </ul>
           </div>
           <div>
             <p class="ll-footer__heading">Legal</p>
             <ul class="ll-footer__list">
-              <li><a href="/privacy">Privacy</a></li>
+              <li><a href="../../privacy/index.html">Privacy</a></li>
             </ul>
           </div>
         </div>
@@ -303,6 +303,6 @@
       </div>
     </footer>
 
-    <script src="/js/site.js" defer></script>
+    <script src="../../assets/site.js" defer></script>
   </body>
 </html>

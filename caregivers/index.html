@@ -10,22 +10,23 @@
     />
     <link rel="stylesheet" href="../design-system/tokens.css" />
     <link rel="stylesheet" href="../design-system/components.css" />
+    <link rel="stylesheet" href="../design-system/a11y.css" />
     <link rel="stylesheet" href="../assets/site.css" />
     <link rel="stylesheet" href="../assets/caregivers.css" />
   </head>
   <body>
-    <a class="ll-btn ll-btn--glow ll-skip" href="#main">Skip to content</a>
+    <a class="ll-btn ll-btn--glow ll-skip" href="#main-content">Skip to main content</a>
 
     <header class="ll-header">
       <div class="ll-shell ll-header__inner">
-        <a class="ll-logo" href="/">
+        <a class="ll-logo" href="../index.html">
           <img
             class="ll-logo__mark"
             src="../assets/little-lanterns-mark.svg"
             width="36"
             height="36"
             alt=""
-          />
+           aria-hidden="true" />
           <span class="ll-brand ll-logo__word">Little Lanterns</span>
         </a>
 
@@ -41,35 +42,35 @@
 
         <nav class="ll-nav" id="primary-nav" data-nav aria-label="Primary">
           <ul class="ll-nav__list">
-            <li><a class="ll-nav__link" href="/">Home</a></li>
-            <li><a class="ll-nav__link" href="/books">Books</a></li>
-            <li><a class="ll-nav__link" href="/about">Our Story</a></li>
+            <li><a class="ll-nav__link" href="../index.html">Home</a></li>
+            <li><a class="ll-nav__link" href="../books/index.html">Books</a></li>
+            <li><a class="ll-nav__link" href="../about/index.html">Our Story</a></li>
             <li>
-              <a class="ll-nav__link" href="/caregivers" aria-current="page"
+              <a class="ll-nav__link" href="../caregivers/index.html" aria-current="page"
                 >For Caregivers</a
               >
             </li>
           </ul>
-          <a class="ll-btn ll-btn--sm ll-btn--glow ll-header__cta" href="/books/the-softest-glow"
+          <a class="ll-btn ll-btn--sm ll-btn--glow ll-header__cta" href="../books/the-softest-glow/index.html"
             >The Softest Glow</a
           >
         </nav>
       </div>
     </header>
 
-    <main id="main">
+    <main id="main-content" tabindex="-1">
       <header class="ll-page-hero ll-shell ll-care-hero">
         <p class="ll-label">For caregivers</p>
-        <h1 class="ll-brand ll-care-hero__brand">Little Lanterns</h1>
-        <p class="ll-display ll-display-lg ll-care-hero__headline">
+        <p class="ll-brand ll-care-hero__brand">Little Lanterns</p>
+        <h1 class="ll-display ll-display-lg ll-care-hero__headline">
           Soft light for read-aloud time
-        </p>
+        </h1>
         <p class="ll-lede">
           Practical tips, gentle discussion prompts, and a printable companion
           for <em>The Softest Glow</em> — so bedtime feels calm, not crowded.
         </p>
         <div class="ll-btn-row">
-          <a class="ll-btn ll-btn--glow ll-btn--lg" href="/books/the-softest-glow"
+          <a class="ll-btn ll-btn--glow ll-btn--lg" href="../books/the-softest-glow/index.html"
             >Open The Softest Glow</a
           >
           <a class="ll-btn ll-btn--quiet ll-btn--lg" href="#tips">Read-aloud tips</a>
@@ -261,10 +262,10 @@
             inside.
           </p>
           <div class="ll-btn-row">
-            <a class="ll-btn ll-btn--glow ll-btn--lg" href="/books/the-softest-glow"
+            <a class="ll-btn ll-btn--glow ll-btn--lg" href="../books/the-softest-glow/index.html"
               >Open The Softest Glow</a
             >
-            <a class="ll-btn ll-btn--quiet" href="/books">Browse books</a>
+            <a class="ll-btn ll-btn--quiet" href="../books/index.html">Browse books</a>
           </div>
         </div>
       </section>
@@ -282,16 +283,16 @@
           <div>
             <p class="ll-footer__heading">Explore</p>
             <ul class="ll-footer__list">
-              <li><a href="/">Home</a></li>
-              <li><a href="/books">Books</a></li>
-              <li><a href="/about">Our Story</a></li>
-              <li><a href="/caregivers">For Caregivers</a></li>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../books/index.html">Books</a></li>
+              <li><a href="../about/index.html">Our Story</a></li>
+              <li><a href="../caregivers/index.html">For Caregivers</a></li>
             </ul>
           </div>
           <div>
             <p class="ll-footer__heading">Legal</p>
             <ul class="ll-footer__list">
-              <li><a href="/privacy">Privacy</a></li>
+              <li><a href="../privacy/index.html">Privacy</a></li>
             </ul>
           </div>
         </div>

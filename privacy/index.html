@@ -7,14 +7,15 @@
   <meta name="description" content="Privacy information for the Little Lanterns marketing website." />
   <link rel="stylesheet" href="../design-system/tokens.css" />
   <link rel="stylesheet" href="../design-system/components.css" />
+    <link rel="stylesheet" href="../design-system/a11y.css" />
   <link rel="stylesheet" href="../assets/site.css" />
 </head>
 <body>
-  <a class="ll-skip ll-btn ll-btn--glow" href="#main">Skip to content</a>
+  <a class="ll-skip ll-btn ll-btn--glow" href="#main-content">Skip to main content</a>
   <header class="ll-header">
     <div class="ll-shell ll-header__inner">
       <a class="ll-logo" href="../index.html">
-        <img class="ll-logo__mark" src="../assets/little-lanterns-mark.svg" alt="" width="36" height="36" />
+        <img class="ll-logo__mark" src="../assets/little-lanterns-mark.svg" alt="" width="36" height="36"  aria-hidden="true" />
         <span class="ll-brand ll-logo__word">Little Lanterns</span>
       </a>
       <button class="ll-nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -29,7 +30,7 @@
       </nav>
     </div>
   </header>
-  <main id="main">
+  <main id="main-content" tabindex="-1">
     <section class="ll-section ll-page-hero">
       <div class="ll-shell ll-prose ll-stack-4" style="max-width:40rem">
         <h1 class="ll-display ll-display-md">Privacy</h1>
